@@ -8,8 +8,7 @@ const pageload = () => {
         const dayOfMonth = daysSinceLast % 29.5;
         const month = (daysSinceLast - dayOfMonth) / 29.5;
 
-        $("#month").text(month);
-        $("#day").text(dayOfMonth);
+        $("#date").text(month + " / " + dayOfMonth);
 }
 
 window.onload = pageload;
