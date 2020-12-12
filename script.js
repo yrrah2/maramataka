@@ -4,7 +4,12 @@ const pageload = () => {
         const timeSinceFirst = dateNow.getTime() - firstMatariki.getTime();
         const daysSinceFirst = Math.ceil(timeSinceFirst / (1000 * 3600 * 24));
         const daysSinceLast = daysSinceFirst % 254;
-        $("#day").text(daysSinceLast);
+
+        const dayOfMonth = daysSinceLast % 29.5;
+        const month = (daysSinceLast - dayOfMonth) / 29.5;
+
+        $("#month").text(month);
+        $("#day").text(dayOfMonth);
 }
 
 window.onload = pageload;
